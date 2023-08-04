@@ -1,0 +1,9 @@
+dependencies {
+    compile project(':domain-usecase')
+    compile project(':domain-model')
+    compile group: 'javax', name: 'javaee-api', version:'7.0'
+    implementation libs.spring_boot
+    implementation libs.jwt
+    implementation libs.gson
+    implementation libs.unit_tests
+}

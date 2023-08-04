@@ -1,0 +1,7 @@
+dependencies {
+    compile project(':domain-model')
+    implementation libs.spring_boot
+    implementation libs.unit_tests
+    implementation libs.gson
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

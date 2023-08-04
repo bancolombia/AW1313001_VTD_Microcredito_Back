@@ -1,0 +1,34 @@
+buildscript {
+	ext {
+		springBootVersion = '2.6.6'
+		sonarVersion = '2.7'
+	}
+
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:${sonarVersion}"
+	}
+}
+
+apply plugin: "org.sonarqube"
+
+sonarqube {
+	properties {
+		property "sonar.sourceEncoding", "UTF-8"
+	}
+}
+
+allprojects {
+
+	apply plugin: "java"
+	apply plugin: "jacoco"
+
+
+	jacoco {
+		toolVersion = "0.8.5"
+	}
+}
+
+
+
+apply from: './main.gradle'
